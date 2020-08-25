@@ -1,7 +1,15 @@
-# Sendbird JavaScript samples
+# Clone of Sendbird JavaScript samples for Hackathon
 ![Platform](https://img.shields.io/badge/platform-JAVASCRIPT-orange.svg)
 ![Languages](https://img.shields.io/badge/language-JAVASCRIPT-orange.svg)
 [![npm](https://img.shields.io/npm/v/sendbird.svg?style=popout&colorB=red)](https://www.npmjs.com/package/sendbird)
+
+
+## StartUp for Hackathon
+- pull this repo and cd into "Sendbird-JavaScript/uikit-samples/composed-react-app"
+- in your terminal type "yarn" to install
+- in your terminal type "yarn start" or "npm start" to run
+- the chat service should now be running on  "http://localhost:8000/"
+
 
 ## Introduction
 

@@ -19,6 +19,9 @@ function App() {
           <Route path="/chat/user/:userId/nickname/:nickname/staff/:staffId">
             <Chat />
           </Route>
+          <Route path="/">
+            Chat is running
+          </Route>
         </Switch>
       </Router>
     </div>
