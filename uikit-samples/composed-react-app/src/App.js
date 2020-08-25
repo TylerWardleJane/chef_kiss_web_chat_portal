@@ -16,15 +16,8 @@ function App() {
     <div className="App">
       <Router>
         <Switch>
-          <Route path="/chat">
-            <Chat
-              userId={config.userId}
-              nickname={config.nickname}
-              theme={config.theme}
-            />
-          </Route>
-          <Route path="/">
-            <Login onSubmit={setconfig} />
+          <Route path="/chat/user/:userId/nickname/:nickname/staff/:staffId">
+            <Chat />
           </Route>
         </Switch>
       </Router>

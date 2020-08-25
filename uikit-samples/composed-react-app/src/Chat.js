@@ -1,58 +1,31 @@
-import React, { useEffect, useState } from 'react';
-
+import React from 'react';
+import { useParams } from 'react-router-dom';
 import './Chat.css';
-
-import { useHistory } from "react-router-dom";
 import {
   SendBirdProvider,
-  ChannelList,
   Channel,
-  ChannelSettings,
 } from 'sendbird-uikit';
 import 'sendbird-uikit/dist/index.css';
 
-export default function Chat({ userId, nickname, theme }) {
-  const history = useHistory();
-  useEffect(() => {
-    if (!userId || !nickname) {
-      history.push('/');
-    }
-  }, [userId, nickname, history]);
-  const [showSettings, setShowSettings] = useState(false);
-  const [currentChannelUrl, setCurrentChannelUrl] = useState(null);
+export default function Chat({ theme }) {
+  const channelURL = "sendbird_group_channel_69687142_93ac789ad5be7b09e638eb2bc4acbf57559fa99d"
+  const { nickname, userId, staffId } = useParams()
   return (
-    <div style={{ height: '100vh' }}>
+    <div style={{ height: '100vh', border: 'none' }}>
       <SendBirdProvider
         appId={process.env.APP_ID}
-        theme={theme}
         userId={userId}
         nickname={nickname}
+        theme={{ border: 'none', backgroundColor: 'white'}}
       >
-        <div className="sendbird-app__wrap">
-          <div className="sendbird-app__channellist-wrap">
-            <ChannelList
-              onChannelSelect={(channel) => {
-                if (channel && channel.url) {
-                  setCurrentChannelUrl(channel.url);
-                }
-              }}
-            />
-          </div>
+          <div className="sendbird-app__wrap">
           <div className="sendbird-app__conversation-wrap">
             <Channel
-              channelUrl={currentChannelUrl}
-              onChatHeaderActionClick={() => { setShowSettings(true); }}
+              renderChatHeader={() => (<div></div>)}
+              channelUrl={channelURL}
             />
           </div>
-        </div>
-        {showSettings && (
-          <div className="sendbird-app__settingspanel-wrap">
-            <ChannelSettings
-              channelUrl={currentChannelUrl}
-              onCloseClick={() => { setShowSettings(false); }}
-            />
           </div>
-        )}
       </SendBirdProvider>
     </div>
   )
