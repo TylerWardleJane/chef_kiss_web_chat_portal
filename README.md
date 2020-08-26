@@ -9,7 +9,7 @@
 - in your terminal type "yarn" to install
 - in your terminal type "yarn start" or "npm start" to run
 - the chat service should now be running on  "http://localhost:8000/"
-- you can visit a channel by adding a userId and staffId to the url "http://localhost:8000/chat/user/:userId/nickname/:nickname/staff/:staffId"
+- you can visit a channel by adding a userId and staffId to the url "http://localhost:8000/chat/user/:userId/staff/:staffId"
 
 
 ## Introduction
