@@ -37,7 +37,7 @@ export default function Chat() {
     <div style={{ height: '100vh', border: 'none' }}>
       <SendBirdProvider
         appId={process.env.APP_ID}
-        userId={userId}
+        userId={staffId}
         theme={{ border: 'none', backgroundColor: 'white'}}
       >
           <FindChannel />
